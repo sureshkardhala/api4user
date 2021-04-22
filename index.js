@@ -132,7 +132,7 @@ app.get('/', function(req, res) {
     res.json({ message: 'welcome to our olxclone' });
 });
 // set port
-app.listen(8080, function () {
-    console.log("Node app is running on port 8080");
+app.listen(3306, function () {
+    console.log("Node app is running on port 3306");
   });
   module.exports = app;

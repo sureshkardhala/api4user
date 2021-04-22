@@ -1,9 +1,9 @@
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : '',
-  database : 'olxdatabase'
+  host     : 'bo0aaomgdmlknhwmfkty-mysql.services.clever-cloud.com',
+  user     : 'uhrowqo83tnbkbpl',
+  password : 'JKLb9Xp2C2KvzdNxo6Su',
+  database : 'bo0aaomgdmlknhwmfkty'
 });
 connection.connect(function(err){
 if(!err) {
