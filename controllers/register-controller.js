@@ -4,9 +4,7 @@ module.exports.register=function(req,res){
     var users={
         "name":req.body.name,
         "email":req.body.email,
-        "password":req.body.password,
-        "created_at":today,
-        "updated_at":today
+        "password":req.body.password
     }
     connection.query('INSERT INTO users SET ?',users, function (error, results, fields) {
       if (error) {
