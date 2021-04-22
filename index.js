@@ -35,16 +35,17 @@ app.post("/addpost", function (req, res) {
   let category = req.body.category;
   let description = req.body.description;
   let contact = req.body.contact;
-  console.log(name + " " + image + " "+category+" " + description + " " + contact);
-  if (!name && !image && !description && !contact && category) {
+  let price = req.body.price;
+  console.log(name + " " + image + " "+category+" " + description + " " + contact+" "+price);
+  if (!name && !image && !description && !contact && category && price) {
     return res
       .status(400)
       .send({ error: true, message: "Please provide Information to be add" });
   }
 
   dbConn.query(
-    "INSERT INTO posts(name, image, category, description, contact) value(?,?,?, ?) ",
-    [name, image, category, description, contact],
+    "INSERT INTO posts(name, image, category, description, contact, price) value(?,?,?, ?, ?,?) ",
+    [name, image, category, description, contact, price],
     function (error, results, fields) {
       if (error) throw error;
       return res.send({
